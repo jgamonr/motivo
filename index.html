@@ -24,6 +24,7 @@
       <nav aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#propuesta">Propuesta</a>
+        <a href="#barras">Barras</a>
         <a href="#menu">Menú</a>
       </nav>
       <a class="header-cta" href="#cotizar">Cotiza tu evento</a>
@@ -77,6 +78,35 @@
       </div>
     </section>
 
+    <section class="bars-section" id="barras">
+      <div class="bars-heading">
+        <div>
+          <p class="section-kicker">Barras para celebrar</p>
+          <h2>Una estación especial<br>para cada <em>motivo.</em></h2>
+        </div>
+        <div class="bars-copy">
+          <p>Haz que tus invitados se acerquen, elijan y disfruten. Llevamos la barra, los insumos y la presentación hasta tu evento.</p>
+          <a href="#cotizar">Consultar disponibilidad <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="bars-grid" aria-label="Opciones de barras para eventos">
+        <article class="bar-card"><span>01</span><h3>Snacks</h3><p>Botanas dulces o saladas, preparadas para compartir durante el evento.</p></article>
+        <article class="bar-card"><span>02</span><h3>Elotes y esquites</h3><p>Tradicionales o con queso, salsas y toppings para personalizar cada vaso.</p></article>
+        <article class="bar-card"><span>03</span><h3>Sushi</h3><p>Una estación fresca con rollos y combinaciones seleccionadas para tus invitados.</p></article>
+        <article class="bar-card"><span>04</span><h3>Pasteles individuales</h3><p>Porciones personales decoradas con toppings a escoger.</p></article>
+        <article class="bar-card"><span>05</span><h3>Palomitas</h3><p>Recién preparadas, con sabores y presentación ideal para reuniones y celebraciones.</p></article>
+        <article class="bar-card"><span>06</span><h3>Bebidas preparadas</h3><p>Aguas frescas, sodas italianas y bebidas especiales servidas al momento.</p></article>
+        <article class="bar-card"><span>07</span><h3>Paletas de nieve</h3><p>Una opción fresca, práctica y colorida para eventos de todas las edades.</p></article>
+        <article class="bar-card"><span>08</span><h3>Raspados</h3><p>Sabores frutales, chamoy y toppings para crear una experiencia a tu gusto.</p></article>
+      </div>
+
+      <div class="bars-callout">
+        <p><strong>¿Buscas otra barra?</strong> Cuéntanos qué servicio necesitas y revisaremos opciones y disponibilidad para la fecha de tu evento.</p>
+        <a class="button button-primary" href="#cotizar">Preguntar por mi servicio <span>↗</span></a>
+      </div>
+    </section>
+
     <section class="menu-section" id="menu">
       <div class="menu-intro">
         <p class="section-kicker">Sabores que reúnen</p>
@@ -85,14 +115,16 @@
         <a href="#cotizar">Armar mi propuesta <span>→</span></a>
       </div>
       <div class="menu-list" aria-label="Opciones de menú">
-        <div><span>01</span><strong>Carne asada</strong></div>
-        <div><span>02</span><strong>Birria</strong></div>
-        <div><span>03</span><strong>Hamburguesas y papas</strong></div>
-        <div><span>04</span><strong>Chilaquiles</strong></div>
-        <div><span>05</span><strong>Pastas</strong></div>
-        <div><span>06</span><strong>Megaburros</strong></div>
-        <div><span>07</span><strong>Flautas en vaso</strong></div>
-        <div><span>08</span><strong>Boneless</strong></div>
+        <div><span>01</span><strong>Chilaquiles</strong></div>
+        <div><span>02</span><strong>Hamburguesas con papas</strong></div>
+        <div><span>03</span><strong>Boneless y nuggets</strong></div>
+        <div><span>04</span><strong>Tacos de asada</strong></div>
+        <div><span>05</span><strong>Birria</strong></div>
+        <div><span>06</span><strong>Tacos gobernador y de camarón</strong></div>
+        <div><span>07</span><strong>Tostadas, flautas y enchiladas</strong></div>
+        <div><span>08</span><strong>Ceviches de pescado, camarón y pulpo</strong></div>
+        <div><span>09</span><strong>Aguas frescas</strong></div>
+        <div><span>10</span><strong>Sodas italianas y latte</strong></div>
       </div>
     </section>
 
@@ -119,7 +151,24 @@
         <div class="field"><label for="guests">Número de invitados *</label><input id="guests" name="guests" type="number" inputmode="numeric" min="1" max="10000" placeholder="Ej. 75" required></div>
         <div class="field"><label for="serviceType">Tipo de servicio *</label><select id="serviceType" name="serviceType" required><option value="" disabled selected>Selecciona una opción</option><option>Preparación y servicio en el lugar</option><option>Entrega de alimentos</option><option>Alimentos, bebidas y montaje</option><option>Aún no lo sé, quiero orientación</option></select></div>
         <div class="field field-wide"><label for="location">Lugar o zona del evento *</label><input id="location" name="location" type="text" placeholder="Salón, colonia o ciudad" required maxlength="160"></div>
-        <div class="field field-wide"><label for="details">Cuéntanos un poco más</label><textarea id="details" name="details" rows="4" placeholder="Platillos que te interesan, horario, estilo del evento o necesidades especiales…" maxlength="1200"></textarea></div>
+        <fieldset class="food-picker field-wide" id="foodPicker">
+          <legend>¿Qué tipo de comida estás buscando? *</legend>
+          <p>Selecciona una o varias opciones. Te ayudaremos a combinarlas en una propuesta.</p>
+          <div class="food-options">
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Desayuno o brunch"><span>Desayuno o brunch<small>Chilaquiles y opciones matutinas</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Parrilla y tacos"><span>Parrilla y tacos<small>Asada, birria y hamburguesas</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Comida mexicana"><span>Comida mexicana<small>Tostadas, flautas y enchiladas</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Mariscos y ceviches"><span>Mariscos y ceviches<small>Pescado, camarón y pulpo</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Botanas"><span>Botanas<small>Boneless, nuggets y papas</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Bebidas"><span>Bebidas<small>Aguas frescas, sodas italianas y latte</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Barras para eventos"><span>Barras para eventos<small>Snacks, elotes, sushi, postres y bebidas</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Menú mixto"><span>Menú mixto<small>Una combinación para el evento</small></span></label>
+            <label class="food-option"><input type="checkbox" name="foodInterest" value="Necesito orientación"><span>Necesito orientación<small>Quiero recibir recomendaciones</small></span></label>
+          </div>
+          <p class="food-error" id="foodError" hidden>Selecciona al menos un tipo de comida.</p>
+        </fieldset>
+        <div class="field field-wide"><label for="foodNotes">¿Qué platillos te interesan?</label><input id="foodNotes" name="foodNotes" type="text" placeholder="Ej. chilaquiles, tacos de asada, ceviche de camarón y aguas frescas" maxlength="500"></div>
+        <div class="field field-wide"><label for="details">Cuéntanos un poco más</label><textarea id="details" name="details" rows="4" placeholder="Horario, estilo del evento, montaje o necesidades especiales…" maxlength="1200"></textarea></div>
         <div class="honeypot" aria-hidden="true"><label for="website">Sitio web</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="form-bottom field-wide"><p>Al enviar aceptas que te contactemos para dar seguimiento a tu cotización.</p><button type="submit" id="submitButton">Enviar solicitud <span>↗</span></button></div>
         <p class="form-message field-wide" id="formMessage" role="status" aria-live="polite" hidden></p>

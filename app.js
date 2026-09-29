@@ -4,6 +4,8 @@ const form = document.getElementById("quoteForm");
 const submitButton = document.getElementById("submitButton");
 const formMessage = document.getElementById("formMessage");
 const eventDate = document.getElementById("eventDate");
+const foodPicker = document.getElementById("foodPicker");
+const foodError = document.getElementById("foodError");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 eventDate.min = new Date().toISOString().split("T")[0];
@@ -19,6 +21,13 @@ form.addEventListener("submit", async (event) => {
   const data = new FormData(form);
   if (data.get("website")) return;
 
+  if (data.getAll("foodInterest").length === 0) {
+    foodError.hidden = false;
+    foodPicker.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  foodError.hidden = true;
+
   submitButton.disabled = true;
   submitButton.firstChild.textContent = "Enviando… ";
   formMessage.hidden = true;
@@ -31,6 +40,7 @@ form.addEventListener("submit", async (event) => {
     });
 
     form.reset();
+    foodError.hidden = true;
     eventDate.min = new Date().toISOString().split("T")[0];
     showMessage("¡Gracias! Recibimos tu solicitud. A la brevedad te contactaremos para ver los detalles de tu evento.", "success");
   } catch (error) {
